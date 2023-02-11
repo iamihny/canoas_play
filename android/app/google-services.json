@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "188862778808",
+    "project_id": "canoasplay-f1909",
+    "storage_bucket": "canoasplay-f1909.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:188862778808:android:35d60e4c25e2808521934d",
+        "android_client_info": {
+          "package_name": "com.example.canoas_play"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "188862778808-42kf97svqvs5ns999mj95uhu9fbuqv9e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwkIB_rB0lqiOMC2iD4I4lqK7il2d-N4M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "188862778808-42kf97svqvs5ns999mj95uhu9fbuqv9e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
