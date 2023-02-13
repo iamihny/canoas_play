@@ -44,7 +44,7 @@ class BreakingNews extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           StreamBuilder(
-            stream: FirebaseFirestore.instance.collection('noticias').orderBy('titulo').snapshots(),
+            stream: FirebaseFirestore.instance.collection('noticias').where('destaque', isEqualTo: false).where('publicada', isEqualTo: true).orderBy('data', descending: true).snapshots(),
             builder: (BuildContext context, AsyncSnapshot snapshot){
                   if (snapshot.hasError){
                     return Text('Error: ${snapshot.error}');

@@ -15,7 +15,7 @@ class ArticleScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-      stream: FirebaseFirestore.instance.collection('noticias').where('url', isEqualTo: this.ID).snapshots(),
+      stream: FirebaseFirestore.instance.collection('noticias').where('url', isEqualTo: this.ID).where('publicada', isEqualTo: true).snapshots(),
       // ignore: missing_return
       builder: (BuildContext context, AsyncSnapshot snapshot){
           if (snapshot.hasError){

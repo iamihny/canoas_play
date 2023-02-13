@@ -33,10 +33,11 @@ class _NewsOfTheDay extends State<NewsOfTheDay> {
   Widget build(BuildContext context) {
     // ignore: avoid_unnecessary_containers
     return StreamBuilder(
-      stream: FirebaseFirestore.instance.collection('noticias').orderBy('titulo').limit(5).snapshots(),
+      stream: FirebaseFirestore.instance.collection('noticias').where('destaque', isEqualTo: true).where('publicada', isEqualTo: true).orderBy('data', descending: true).limit(5).snapshots(),
       builder: (BuildContext context, AsyncSnapshot snapshot){
           if (snapshot.hasError){
-            return Text('Error: ${snapshot.error}');
+            print(snapshot.error);
+            //return Text('Error: ${snapshot.error}');
           } 
 
 
