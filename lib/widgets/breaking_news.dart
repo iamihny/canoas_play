@@ -30,10 +30,10 @@ class BreakingNews extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Breaking News',
+                'Últimas Notícias',
                 style: Theme.of(context)
                     .textTheme
                     .headlineSmall

@@ -36,6 +36,7 @@ class ArticleScreen extends StatelessWidget {
                        children: [
                          ImageContainer(
                             width: double.infinity,
+                            height: 400,
                             imageUrl: snapshot.data.docs[index]['imageUrl'],
                             child: Scaffold(
                               appBar: AppBar(
@@ -45,7 +46,14 @@ class ArticleScreen extends StatelessWidget {
                               ),
                               backgroundColor: Colors.transparent,
                               extendBodyBehindAppBar: true,
-                              //body: _NewsHeadline(article: snapshot.data.docs[index]),
+                              /*
+                              body: Padding(padding: EdgeInsets.all(50), 
+                                      child: Text(snapshot.data.docs[index]['titulo'],  
+                                               style: Theme.of(context)
+                                                          .textTheme
+                                                          .headlineSmall
+                                                          .copyWith(fontWeight: FontWeight.bold, color: Colors.white))8
+                                  ),*/
                             ),
                          ),
                          _NewsBody(article: snapshot.data.docs[index])
@@ -117,11 +125,14 @@ class _NewsBody extends StatelessWidget {
               CustomTag(
                 backgroundColor: Colors.black,
                 children: [
+                  // ignore: prefer_const_constructors
                   CircleAvatar(
                     radius: 10,
-                    backgroundImage: NetworkImage(
+                    child: const Icon(Icons.account_circle_rounded),
+                    backgroundColor: Colors.black,
+                   /* backgroundImage: NetworkImage(
                       article['imageUrl'],
-                    ),
+                    ),*/
                   ),
                   const SizedBox(width: 10),
                   Text(
@@ -188,6 +199,7 @@ class _NewsBody extends StatelessWidget {
           ),*/
 
           const SizedBox(height: 20),
+          /*
           GridView.builder(
               shrinkWrap: true,
               itemCount: 1,
@@ -201,7 +213,7 @@ class _NewsBody extends StatelessWidget {
                   imageUrl: article['imageUrl'],
                   margin: const EdgeInsets.only(right: 5.0, bottom: 5.0),
                 );
-              })
+              }) */
         ],
       ),
     );

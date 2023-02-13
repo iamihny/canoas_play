@@ -2,6 +2,7 @@
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -19,6 +20,13 @@ class NewsOfTheDay extends StatefulWidget {
 class _NewsOfTheDay extends State<NewsOfTheDay> {
   int _current = 0;
   final CarouselController _controller = CarouselController();
+  /*
+  @override
+  Future<void> initState() async {
+    final  ref = FirebaseStorage.instance.ref().child('noticias/defesa-civil-doacoes_reduzidas_gustavo-garbino-3.jpg');
+    var url = await ref.getDownloadURL();
+    print(url);  
+  } */
 
 
   @override
@@ -44,14 +52,14 @@ class _NewsOfTheDay extends State<NewsOfTheDay> {
                       itemCount: snapshot.data.docs.length,
                       carouselController: _controller,
                       options: CarouselOptions(
-                          height: 200,
+                          height: 350,
                           aspectRatio: 16/9,
                           viewportFraction: 0.8,
                           initialPage: 0,
                           enableInfiniteScroll: true,
                           reverse: false,
                           autoPlay: true,
-                          autoPlayInterval: Duration(seconds: 2),
+                          autoPlayInterval: Duration(seconds: 5),
                           autoPlayAnimationDuration: Duration(milliseconds: 800),
                           autoPlayCurve: Curves.fastOutSlowIn,
                           enlargeCenterPage: true,
@@ -71,8 +79,9 @@ class _NewsOfTheDay extends State<NewsOfTheDay> {
                           },
                           child: ImageContainer(
                                   width: MediaQuery.of(context).size.width * 0.5,
-                                  height: 100,
+                                  height: 200,
                                   imageUrl: snapshot.data.docs[index]['imageUrl'],
+                                 // imageUrl: ref.getDownloadURL().toString(),
                                   child: Card(
                                     // ignore: sort_child_properties_last
                                     child: Text(snapshot.data.docs[index]['titulo'],  

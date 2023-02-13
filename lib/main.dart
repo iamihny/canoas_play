@@ -1,5 +1,7 @@
 
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:fluro/fluro.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'screens/screens.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -12,7 +14,8 @@ Future<void> main() async {
       apiKey: "AIzaSyA87EN17AyOc5HA7Z-5VQybZXq3HDZlUFg", 
       appId: "1:188862778808:web:0b2bce5bd503a82821934d",
       messagingSenderId: "188862778808", 
-      projectId: "canoasplay-f1909"
+      projectId: "canoasplay-f1909",
+      storageBucket: "canoasplay-f1909.appspot.com"
     ) 
   );
 
